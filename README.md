@@ -1,33 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Sanity CMS Project
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and integrated with Sanity CMS.
 
 ## Getting Started
 
-First, install dependencies:
+### 1. Install Dependencies
+
+First, install the project dependencies:
 
 ```bash
 pnpm i
 ```
 
-Then, sign up to `sanity.io`. You'll need to create a project there.
-Every project has an `id` and `dataset`. You may have up to 2 datasets on a free plan.
+### 2. Set Up Sanity CMS
 
-Create a `development` dataset and then and API token with a `read/write` permission.
+1. Sign up for an account at [sanity.io](https://sanity.io)
+2. Create a new project in your Sanity dashboard
+3. Note your project's `ID` and create a `dataset` (you can have up to 2 datasets on the free plan)
+4. Create a `development` dataset
+5. Generate an API token with `read/write` permissions
 
-Now, armed with an id, new dataset and token, copy the `env.example` and populate three variables you see.
+### 3. Configure Environment Variables
 
-You should be all set.
+1. Copy the `env.example` file to `.env.local`
+2. Populate the three required variables with your Sanity project details:
+   - NEXT_PUBLIC_SANITY_PROJECT_ID
+   - NEXT_PUBLIC_SANITY_DATASET
+   - SANITY_API_READ_WRITE_TOKEN
 
-Lastly, run the development server:
+### 4. Start the Development Server
+
+Run the development server:
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the pages with Sanity CMS content.
+### 5. Access Your Application
 
-Open [http://localhost:3000/studio](http://localhost:3000/studio) with your browser to see the sanity studio and manage content.
+- **Main site**: Open [http://localhost:3000](http://localhost:3000) to view your pages with Sanity CMS content
+- **Sanity Studio**: Open [http://localhost:3000/studio](http://localhost:3000/studio) to access the content management interface
 
-Documents and schemas are prepared for you, but there is no data in the dataset you just created. 
-Before you see anything displayed on the page, make sure to create a page using sanity studio url above. Once you have the page ready and `published`, assign it as a homepage in the `Site Settings` document.
+## Initial Setup
 
-Enjoy editing content, expanding schemas and experimenting further :)
+The project comes with pre-configured documents and schemas, but your newly created dataset will be empty. To see content on your site:
+
+1. Navigate to the Sanity Studio at [http://localhost:3000/studio](http://localhost:3000/studio)
+2. Create your first page using the studio interface
+3. **Publish** the page once you're satisfied with the content
+4. In the `Site Settings` document, assign your newly created page as the homepage
+
+## Next Steps
+
+You're now ready to:
+- Edit content through the Sanity Studio
+- Expand and customize the existing schemas
+- Experiment with additional features
+
+Enjoy building with Sanity CMS :)
